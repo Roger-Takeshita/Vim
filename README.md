@@ -18,6 +18,13 @@
     - [Insert Content](#insert-content)
     - [Change Window Focus](#change-window-focus)
     - [Help](#help)
+  - [Navigate](#navigate)
+  - [Replace Word / Inner Content Of a Tag + INSERT MODE](#replace-word--inner-content-of-a-tag--insert-mode)
+  - [Change Surround](#change-surround)
+  - [Copy Word](#copy-word)
+  - [Go Replace](#go-replace)
+  - [Copy to Clipboard](#copy-to-clipboard)
+  - [Commentary](#commentary)
 
 # VIM
 
@@ -178,3 +185,73 @@
   :help insert-index
   :help user-manual
 ```
+
+## Navigate
+
+- Search character in line
+
+  ```Bash
+    f + letter # Move forward including the letter
+    ;          # Move forward
+    ,          # Move backward
+
+    t + letter # Move forward not including the letter
+    ;          # Move forward
+    ,          # Move backward
+
+    F # Search backwards including the letter
+    T # Search backwards not including the letter
+  ```
+
+## Replace Word / Inner Content Of a Tag + INSERT MODE
+
+```Bash
+  cas # Change the whole block of sentence
+  cw  # Change the word from cursor til the end
+  ciw # Change the current word
+  cit # Change inner content of a tag
+  ci" # Change the inside word of ""
+  cip # Change the inner p tag
+  c#j # Change from current line + number
+```
+
+```Bash
+  c/word + enter # Change word that is not accessible easily
+```
+
+## Change Surround
+
+- [tpope/vim-surround](https://github.com/tpope/vim-surround)
+
+  ```Bash
+    cs"'  # Change surround " to '
+    ysiw" # Add surround "
+  ```
+
+## Copy Word
+
+```Bash
+  yiw # Copy Word
+```
+
+## Go Replace
+
+- [vim-scripts/ReplaceWithRegister](https://github.com/vim-scripts/ReplaceWithRegister)
+
+  ```Bash
+    griw # Go replace inner word
+  ```
+
+## Copy to Clipboard
+
+- [christoomey/vim-system-copy](https://github.com/christoomey/vim-system-copy)
+
+  ```Bash
+    cpiw # copy word into system clipboard
+    cpi' # copy inside single quotes to system clipboard
+    cvi' # paste inside single quotes from system clipboard
+  ```
+
+## Commentary
+
+- [tpope/vim-commentary](https://github.com/tpope/vim-commentary)
