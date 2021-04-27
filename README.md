@@ -247,11 +247,17 @@
 - [christoomey/vim-system-copy](https://github.com/christoomey/vim-system-copy)
 
   ```Bash
-    cpiw # copy word into system clipboard
-    cpi' # copy inside single quotes to system clipboard
-    cvi' # paste inside single quotes from system clipboard
+    cp   # Copy selection
+    cpiw # Copy word into system clipboard
+    cpi' # Copy inside single quotes to system clipboard
+    cvi' # Paste inside single quotes from system clipboard
   ```
 
 ## Commentary
 
 - [tpope/vim-commentary](https://github.com/tpope/vim-commentary)
+
+  ```Bash
+    gcc  # Comment line
+    gcap # Comment a paragraph
+  ```
