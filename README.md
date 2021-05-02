@@ -5,13 +5,17 @@
     - [Insert](#insert)
     - [Exit / Save](#exit--save)
     - [Move](#move)
+      - [Horizontal Move](#horizontal-move)
+      - [Vertical Move](#vertical-move)
+    - [Search](#search)
+    - [Marker](#marker)
     - [Copy](#copy)
     - [Delete](#delete)
     - [Paste](#paste)
     - [Replace](#replace)
     - [Undo](#undo)
     - [Redo](#redo)
-    - [Search](#search)
+    - [Search](#search-1)
     - [Execute Shell Commands](#execute-shell-commands)
     - [Recording](#recording)
     - [Select Text and Save as New File](#select-text-and-save-as-new-file)
@@ -67,8 +71,6 @@
   0           # Beginning of the line
   $           # End of the line
   Ctrl + g    # Show where you are in the file
-  Shift + g   # Bottom of the file
-  gg          # Top of the file
   number + G  # Go to line
   %           # Find closing brackets
   Ctrl + o    # Takes you back to older positions
@@ -76,6 +78,53 @@
 
   Ctrl + e    # Move down
   Ctrl + y    # Move up
+```
+
+#### Horizontal Move
+
+```Bash
+  # File
+  gg          # Top of the file
+  Shift + g   # Bottom of the file
+
+  # Screen
+  H           # Top of the screen
+  M           # Middle of the screen
+  L           # Bottom of the screen
+  zz          # Center the file in the middle of the screen
+  zt          # Put your the file in the top of the screen
+  zb          # Put your the file in the bottom of the screen (not very useful)
+  Ctrl + e    # Move the screen down, the cursor stays still
+  Ctrl + y    # Move the screen up, the cursor stays still
+  Ctrl + d    # Move half of the screen down, cursor stay in the same height
+  Ctrl + u    # Move half of the screen up, cursor stay in the same height
+```
+
+#### Vertical Move
+
+```Bash
+  0           # Beginning of the line
+  $           # End of the line
+  ^           # First non blank character
+  g_          # End of the line non blank character
+  %           # Matches the open and closing (), [], ...
+```
+
+### Search
+
+```Bash
+  *           # Search for the word that I am current on
+  f + character # Search in the line
+    ;             # Move forward
+    ,             # Move backwards
+```
+
+### Marker
+
+```Bash
+  mm          # Create a marker with the letter m
+  `m          # Go to marker m
+  'm          # Go to marker m, beginning of the line
 ```
 
 ### Copy
@@ -94,6 +143,9 @@
   dw          # Delete word
   d$          # Delete right until the end
   d2w         # Delete 2 words
+  diW         # Delete big word (entire block of word)
+  dt + symbol # Delete everything between not including the symbol
+  df + symbol # Delete everything between including the symbol
 ```
 
 ### Paste
